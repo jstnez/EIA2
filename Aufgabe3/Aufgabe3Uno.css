@@ -1,0 +1,86 @@
+/*Aufgabe: Aufgabe0
+Name: Justine Zythke
+Matrikel: 259315
+Datum: 10.10.2018
+    
+Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde nicht kopiert und auch nicht diktiert.
+*/
+@charset "ISO-8859-1";
+
+#Ablagestapel {
+	background-color: #99A9B6;
+	width: 130px;
+	height: 230px;
+	border: solid thin black;
+	position: absolute;
+	right: 0px;
+	top: 0px;
+}
+
+#Nachziehstapel {
+	background-color: #977474;
+	width: 130px;
+	height: 230px;
+	border: solid thin black;
+}
+
+#Handkarten {
+	width: 90%;
+	border-style: solid;
+	border-width: 1px;
+	height: 200px;
+	bottom: 0px;
+	position: absolute;
+}
+
+.Handkarten {
+	display: inline-block;
+	bottom: 0px;
+	margin: 5px;
+}
+
+.red {
+	background: red;
+	width: 130px;
+	height: 170px;
+	border: dotted black;
+}
+
+.blue {
+	background: blue;
+	width: 130px;
+	height: 170px;
+	border: dotted black;
+}
+
+.green {
+	background: green;
+	width: 130px;
+	height: 170px;
+	border: dotted black;
+}
+
+.yellow {
+	background: yellow;
+	width: 130px;
+	height: 170px;
+	border: dotted black;
+}
+
+.black {
+	background: black;
+	width: 130px;
+	height: 170px;
+	border: dotted black;
+	color: white;
+}
+
+#button {
+	border: dotted black;
+	width: 90px;
+	height: 30px;
+	position: absolute;
+	bottom: 100px;
+	right: 20px;
+	text-align: center;
+}
