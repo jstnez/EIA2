@@ -1,7 +1,7 @@
-/*Aufgabe: Aufgabe0
+/*Aufgabe: Aufgabe3
 Name: Justine Zythke
 Matrikel: 259315
-Datum: 10.10.2018
+Datum: 08.11.2018
     
 Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde nicht kopiert und auch nicht diktiert.
 */
