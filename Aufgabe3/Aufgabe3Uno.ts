@@ -40,8 +40,8 @@ namespace UnoSpielA3 {
         displayHand();
 
         let button: HTMLElement = document.getElementById("button");
-    button.addEventListener("click", sortierekarten);
-        
+        button.addEventListener("click", sortierekarten);
+
         let pull: HTMLElement = document.getElementById("Nachziehstapel");
         pull.addEventListener("click", pullFromNachziehstapel);
 
@@ -95,8 +95,8 @@ namespace UnoSpielA3 {
         handcards.splice(index, 1);
         displayHand();
     }
-    
-    
+
+
 
     function sortierekarten(): void {
         console.log(handcards);
