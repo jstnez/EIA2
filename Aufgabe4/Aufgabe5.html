@@ -1,0 +1,66 @@
+<!--Aufgabe: Aufgabe5
+Name: Justine Zythke
+Matrikel: 259315
+Datum: 16.11.2018
+	
+Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde nicht kopiert und auch nicht diktiert.
+-->
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+
+<script src="Aufgabe.js"></script>
+<link rel="stylesheet" type="text/css" href="Aufgabe2UNO.css">
+
+</head>
+<body>
+
+<h1>Weihnachtsbaum Konfigurator</h1>
+
+<fieldset>Baumart id="trees"</fieldset>
+
+<fieldset>Halterungen id="treeholder"</fieldset>
+
+<fieldset>Lichterketten id="lightstring"</fieldset>
+
+<fieldset>Kugeln id="balls"</fieldset>
+
+<fieldset>Lametta id="lametta"</fieldset>
+
+<fieldset>Spitze id="top"</fieldset>
+
+<fieldset id="Lieferoptionen">
+		<legend> Lieferoptionen </legend>
+		<input type="radio" name="Radiogroup" value="radio1" id="radio1" />
+		<label for="radio1">Weihnachtsmann</label>
+		<input type="radio" name="Radiogroup" value="radio2" id="radio2"/>
+		<label for="radio2">Hermes</label>
+		<input type="radio" name="Radiogroup" value="radio3" id="radio3"/>
+		<label for="radio3">DHL</label>
+	</fieldset>
+	
+<fieldset id="text">
+		<legend> Wo soll der Baum hinhgehen? </legend>
+		Vor- und Zuname
+		<input type="text" name="Text" placeholder="Santa Claus" required/>
+		<hr/>
+		Straße und Hausnummer
+		<input type="password" name="Password" placeholder="Rehntierallee 1"/>
+		<hr/>
+		PLZ
+		<input type="text" name="Pattern" pattern="[0-9]{3}" placeholder="187"/>
+		<hr/>
+		Mail
+		<input type="email" name="Mail" placeholder="mrclaus@weihnachtsmann.net"/>
+		<hr/>
+		Stadt
+		<input type="url" name="Url" placeholder="Nordpool"/>
+		<hr/>
+		Telefonummer
+		<textarea name="Area" cols="20" rows="1" placeholder="1224 2412"></textarea>
+	</fieldset>

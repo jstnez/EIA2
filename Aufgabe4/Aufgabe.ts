@@ -1,0 +1,36 @@
+/*Aufgabe: Aufgabe5
+Name: Justine Zythke
+Matrikel: 259315
+Datum: 16.11.2018
+    
+Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde nicht kopiert und auch nicht diktiert.
+*/
+
+namespace HolyChristmasTree {
+
+
+    interface Products {
+        name: string;
+        price: number;
+    }
+
+
+    let trees: Products[] = [{ name: " Premium Nordmanntanne", price: 34.95 }, { name: "Premium Blaufichte", price: 19.85 }, { name: "Premium Douglasie Tanne", price: 49.90 }];
+
+    let treeholder: Products[] = [{ name: "Blumentopf", price: 20 }, { name: "Star-Max", price: 24.21 }, { name: "Antiksst‰nder", price: 16.65 }];
+
+    let lightstring: Products[] = [{ name: "Sterne silber", price: 19.95 }, { name: "600LEDs", price: 55.55 }, { name: "LED Kugeln weiﬂ", price: 31.43 }];
+
+    let balls: Products[] = [{ name: "Eisblau Kunststoff", price: 9.99 }, { name: "Matt rot, Glas", price: 16.95 }, { name: "Colori Trendi", price: 30.59 }];
+
+    let lametta: Products[] = [{ name: "Schwarz Glizer", price: 4.99 }, { name: "Gold gl‰nzend", price: 4.99 }, { name: "Bunt  matt", price: 4.99 }];
+
+    let top: Products[] = [{ name: "Aus irisierendem Klar Glas", price: 22.00 }, { name: "Inge Glas", price: 12.50 }, { name: "Satin Glas", price: 24.95 }];
+
+
+
+
+
+
+    
+}
