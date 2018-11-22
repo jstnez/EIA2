@@ -83,7 +83,7 @@ namespace HolyChristmasTree {
         for (let i: number = 0; i < product.length; i++) {
             if (_input == "change") {
 
-            }
+           }
         }
     }
 
