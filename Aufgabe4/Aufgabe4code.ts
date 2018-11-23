@@ -82,7 +82,7 @@ namespace HolyChristmasTree {
         let product: Product[] = offers[_key];
         for (let i: number = 0; i < product.length; i++) {
             if (_input == "change") {
-
+ydgfxg
            }
         }
     }
