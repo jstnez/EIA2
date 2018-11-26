@@ -6,7 +6,7 @@ namespace HolyChristmasTree {
 
     }
 
-    let cart: Product[] = [];
+
 
     function createInput(): void {
 
@@ -67,9 +67,11 @@ namespace HolyChristmasTree {
             if (input.checked == true) {
                 let name: string = input.getAttribute("name");
                 let price: number = parseInt(input.getAttribute("price"));
-                
-//                cart.appendChild(name + price);
-//                cart.innerHTML = "name" + "price";
+               
+//               let cart: string = document.getElementById("cart");
+               
+              
+//                cart.innerHTML = name + price;
                 
                 
 //                document.getElementsByTagName("name");

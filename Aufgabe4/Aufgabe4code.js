@@ -4,7 +4,6 @@ var HolyChristmasTree;
     function init() {
         createInput();
     }
-    let cart = [];
     function createInput() {
         for (let key in HolyChristmasTree.offers) {
             let product = HolyChristmasTree.offers[key];

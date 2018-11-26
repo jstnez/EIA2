@@ -5,9 +5,9 @@ Datum: 16.11.2018
     
 Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde nicht kopiert und auch nicht diktiert.
 */
-var HolyChristmasTree;
-(function (HolyChristmasTree) {
-    HolyChristmasTree.offers = {
+var HolyChristmasTree2;
+(function (HolyChristmasTree2) {
+    HolyChristmasTree2.offers = {
         "trees": [
             { name: "Premium Nordmanntanne", price: 34.95 },
             { name: "Premium Blaufichte", price: 19.85 },
@@ -39,5 +39,5 @@ var HolyChristmasTree;
             { name: "Satin Glas", price: 24.95 }
         ]
     };
-})(HolyChristmasTree || (HolyChristmasTree = {}));
-//# sourceMappingURL=Aufgabe4Haendler.js.map
+})(HolyChristmasTree2 || (HolyChristmasTree2 = {}));
+//# sourceMappingURL=WeihnachtsbaumMitWarenkorbStruktur.js.map

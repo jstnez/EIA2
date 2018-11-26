@@ -1,21 +1,12 @@
-namespace HolyChristmasTree {
+namespace HolyChristmasTree2 {
     window.addEventListener("DOMContentLoaded", init);
 
     function init(): void {
         createInput();
+
     }
 
-    //        let fieldsets: NodeListOf<HTMLFieldSetElement> = 
-    //                    document.getElementsByTagName("fieldset");
-    //
-    //        for (let i: number = 0; i < fieldsets.length; i++) {
-    //            let fieldset: HTMLFieldSetElement = fieldsets[i];
-    //            fieldset.addEventListenchange", refreshCart);
-    //        }
-    //    }
 
-
-    let cart: Product[] = [];
 
     function createInput(): void {
 
@@ -37,6 +28,7 @@ namespace HolyChristmasTree {
                 input.id = offers[key][a].name;
                 input.setAttribute("group", key);
                 input.setAttribute("index", "" + a);
+                input.setAttribute("price", "" + offers[key][a].price);
 
                 let label: HTMLLabelElement = document.createElement("label");
                 document.getElementById(key).appendChild(label);
@@ -61,29 +53,32 @@ namespace HolyChristmasTree {
                 }
 
                 document.getElementById(key).appendChild(document.createElement("br"));
-
-
-                createCart(key);
-
             }
         }
-
-
-
-
     }
 
-    let fieldsets: NodeListOf<HTMLFieldSetElement> =
-        document.getElementsByTagName("fieldset");
+    
+ 
+    function createCart(): void {
 
+        let inputs: NodeListOf<HTMLInputElement> = document.getElementsByTagName("input");
+        for (let i: number = 0; i < inputs.length; i++) {
+            let input: HTMLInputElement = inputs[i];
+            if (input.checked == true) {
+                let name: string = input.getAttribute("name");
+                let price: number = parseInt(input.getAttribute("price"));
+               
+//               let cart: string = document.getElementById("cart");
+               
+              
+//                cart.innerHTML = name + price;
+                
+                
+//                document.getElementsByTagName("name");
+//                document.getElementsByTagName("price");
+                //                NodeListOf<HTMLInputElement>.push(cart[i]);
 
-
-    function createCart(_key: string, _input: ): void {
-        let product: Product[] = offers[_key];
-        for (let i: number = 0; i < product.length; i++) {
-            if (_input == "change") {
-
-           }
+            }
         }
     }
 

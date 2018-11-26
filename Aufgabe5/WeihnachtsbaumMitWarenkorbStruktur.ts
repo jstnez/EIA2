@@ -6,7 +6,7 @@ Datum: 16.11.2018
 Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde nicht kopiert und auch nicht diktiert.
 */
 
-namespace HolyChristmasTree {
+namespace HolyChristmasTree2 {
 
 
     export interface Product {
@@ -57,6 +57,6 @@ namespace HolyChristmasTree {
                 { name: "Satin Glas", price: 24.95 }
             ]
 
-};
-        
+        };
+
 }
