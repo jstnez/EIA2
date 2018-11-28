@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>SendData</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" href="SendData.css" type="text/css" media="screen"/>
+<!--  - ->
+<script src="SendData.js" type="text/javascript" charset="utf-8"></script>
+<!--  -->
+</head>
+<body>
+	<!--  - ->
+	<form action="https://eia2-nodetest.herokuapp.com" method="get">
+	<!--  - ->
+	<form action="http://localhost:8100" method="get">
+	<!--  -->
+	<form action="SendData.html" method="get">
+	<!--  -->
+		<fieldset id="radio">
+			<legend> Choose color with radio buttons </legend>
+			<input type="radio" name="color" value="red" id="red" />
+			<label for="red">Red</label>
+			<input type="radio" name="color" value="green" id="green"/>
+			<label for="green">Green</label>
+			<input type="radio" name="color" value="blue" id="blue"/>
+			<label for="blue">Blue</label>
+		</fieldset>
+		
+		<input type="text" name="text" value="type here"/>
+	
+		<button type="submit">Submit</button>
+	<!--  -->
+	</form>
+	<!--  - ->
+	<fieldset id="div">
+		<legend> Pick color with divs </legend>
+		<div></div>
+		<div></div>
+		<div></div>
+	</fieldset>
+	<!--  -->
+</body>
+</html>

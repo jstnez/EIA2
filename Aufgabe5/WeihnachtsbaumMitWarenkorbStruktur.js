@@ -16,12 +16,12 @@ var HolyChristmasTree2;
         "treeholder": [
             { name: "Blumentopf", price: 20 },
             { name: "Star-Max", price: 24.21 },
-            { name: "Antiksst�nder", price: 16.65 }
+            { name: "Antiksstaender", price: 16.65 }
         ],
         "lightstring": [
             { name: "Sterne silber", price: 19.95 },
             { name: "600LEDs", price: 55.55 },
-            { name: "LED Kugeln wei�", price: 31.43 }
+            { name: "LED Kugeln weiss", price: 31.43 }
         ],
         "balls": [
             { name: "Eisblau Kunststoff", price: 1.50 },
@@ -30,7 +30,7 @@ var HolyChristmasTree2;
         ],
         "lametta": [
             { name: "Schwarz Glizer", price: 4.99 },
-            { name: "Gold gl�nzend", price: 4.99 },
+            { name: "Gold glaenzend", price: 4.99 },
             { name: "Bunt  matt", price: 4.99 }
         ],
         "top": [

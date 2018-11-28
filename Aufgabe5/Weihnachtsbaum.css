@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css?family=Dancing+Script|Give+You+Glory');
+@import url('https://fonts.googleapis.com/css?family=Dancing+Script|Give+You+Glory|Open+Sans+Condensed:300|Playfair+Display|Shadows+Into+Light+Two|Wire+One');
+
+
+html {background-color: #514646}
+
+
+h1{
+	font-size: 50px;
+	color: white;
+    font-family: 'Dancing Script', cursive;
+    font-family: 'Give You Glory', cursive;
+
+
+	}
+	
+fieldset {background-color: #DA4343;
+	color:white;
+    font-family: 'Dancing Script', cursive;
+    font-family: 'Give You Glory', cursive;
+    font-family: 'Shadows Into Light Two', cursive;
+    font-family: 'Playfair Display', serif;
+    font-family: 'Wire One', sans-serif;
+    font-family: 'Open Sans Condensed', sans-serif;
+    width: 400px;
+    margin-left: 200px;
+   font-size: 20px;
+   
+}
+
+legend { font-size: 20px;
+
+    text-decoration: underline;
+}
+
+#cart {
+	background-color: #DA4343;
+	position: absolute;
+	right: 200px;
+	top: 250px;
+	border: white dotted;
+	color: white;
+	font-family: 'Dancing Script', cursive;
+    font-family: 'Give You Glory', cursive;
+    font-family: 'Shadows Into Light Two', cursive;
+    font-family: 'Playfair Display', serif;
+    font-family: 'Wire One', sans-serif;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 20px;
+     width: 400px;
+}
