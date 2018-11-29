@@ -13,6 +13,7 @@ namespace L06_SendData { //klassischer namespace
 
     function handleListen(): void { //neue funktion wird erstellt
         console.log("Listening"); //gibt Listening in der console aus 
+        
     }
 
     function handleRequest(_request: Http.IncomingMessage, _response: Http.ServerResponse): void { //eine Funktion, die bei einer incomingMessage eine ServerResponse zurückgibt
@@ -22,7 +23,7 @@ namespace L06_SendData { //klassischer namespace
         _response.setHeader("Access-Control-Allow-Origin", "*"); //dem header wird Access-Control-Allow-Origin hinzugefügt, erlaubt die Aussage des Nutzers mit der Quelle zu teilen
 
         _response.write(_request.url); //Ruft Informationen über die URL der aktuellen Anforderung ab.
-        
+        console.log(_request.url);
         _response.end(); //konversation wird beendet
     }
 }

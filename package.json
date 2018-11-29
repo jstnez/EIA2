@@ -1,0 +1,15 @@
+{
+	"name" : "MiniServer",
+	"version" : "1.0.0",
+	"description" : "Minimal server just bouncing the URL",
+	"author" : "Jirka",
+	"main" : "Server.js",
+	"scripts" : {
+		"start" : "node L06_SendData/Server/Server.js"
+	},
+	"engines" : {
+		"node" : "8.10.0"
+	},
+	"dependencies" : {
+	}
+}
