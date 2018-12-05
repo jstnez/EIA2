@@ -1,6 +1,14 @@
 import * as Http from "http"; // importiert eine Datai als http
+import * as Url from "url";
 
 namespace L06_SendData { //klassischer namespace 
+
+    namespace L06_SendData {
+    interface Product {
+        [key: string]: number;
+}
+   
+    
     console.log("Starting server"); //Konsolenausgabe von "Starting server"
     let port: number = process.env.PORT; //process.env.PORT ist eine Nummer, port definiert wo (welcher server) du bist
     if (port == undefined) //wenn der port nicht definiert ist
@@ -24,6 +32,19 @@ namespace L06_SendData { //klassischer namespace
 
         _response.write(_request.url); //Ruft Informationen über die URL der aktuellen Anforderung ab.
         console.log(_request.url);
+        
+        let url: Product = Url.parse(_request.url, true).query;
+        console.log(url);
+        
+        for (let key in url) {
+            console.log(url[key]);
+            console.log(key);
+            
+            _response.write(key + " = " + url[key] + "<br>");
+}
+        
+        
         _response.end(); //konversation wird beendet
     }
 }
+    }

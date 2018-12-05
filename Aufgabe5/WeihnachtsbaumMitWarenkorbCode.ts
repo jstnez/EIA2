@@ -1,4 +1,4 @@
-namespace HolyChristmasTree2 {
+namespace HolyChristmasTree {
     window.addEventListener("DOMContentLoaded", init);
 
     function init(): void {
