@@ -3,7 +3,7 @@ import * as Url from "url";
 
 namespace L06_SendData { //klassischer namespace 
 
-    namespace L06_SendData {
+    namespace HolyChrismastree3 {
     interface Product {
         [key: string]: number;
 }

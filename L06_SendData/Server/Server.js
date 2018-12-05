@@ -2,9 +2,9 @@
 const Http = require("http"); // importiert eine Datai als http
 const Url = require("url");
 var L06_SendData;
-(function (L06_SendData_1) {
-    var L06_SendData;
-    (function (L06_SendData) {
+(function (L06_SendData) {
+    var HolyChrismastree3;
+    (function (HolyChrismastree3) {
         console.log("Starting server"); //Konsolenausgabe von "Starting server"
         let port = process.env.PORT; //process.env.PORT ist eine Nummer, port definiert wo (welcher server) du bist
         if (port == undefined)
@@ -30,6 +30,6 @@ var L06_SendData;
             }
             _response.end(); //konversation wird beendet
         }
-    })(L06_SendData || (L06_SendData = {}));
+    })(HolyChrismastree3 || (HolyChrismastree3 = {}));
 })(L06_SendData || (L06_SendData = {}));
 //# sourceMappingURL=Server.js.map
