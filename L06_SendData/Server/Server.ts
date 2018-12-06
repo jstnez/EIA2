@@ -41,8 +41,8 @@ namespace L06_SendData { //klassischer namespace
             console.log(key);
             
             _response.write(key + " = " + url[key] + "<br>");
-}
-        
+} 
+        console.log();
         
         _response.end(); //konversation wird beendet
     }

@@ -1,9 +1,31 @@
 namespace HolyChristmasTree2 {
     window.addEventListener("DOMContentLoaded", init);
+    let address: string = "http://localhost:8100";
 
     function init(): void {
         createInput();
-        document.getElementById("button").addEventListener("click", checkOrder);
+        let bestellButton: HTMLElement = document.getElementById("Bestellbutton");
+        bestellButton.addEventListener("click", handleClickOnAsync);
+    }
+
+    function handleClickOnAsync(_event: Event): void {
+        let color: string = (<HTMLInputElement>document.querySelector(":checked")).value;
+        sendRequestWithCustomData(color);
+    }
+
+    function sendRequestWithCustomData(_color: string): void {
+        let xhr: XMLHttpRequest = new XMLHttpRequest();
+        xhr.open("GET", address + "?color=" + _color, true);
+        xhr.addEventListener("readystatechange", handleStateChange);
+        xhr.send();
+    }
+
+    function handleStateChange(_event: ProgressEvent): void {
+        var xhr: XMLHttpRequest = <XMLHttpRequest>_event.target;
+        if (xhr.readyState == XMLHttpRequest.DONE) {
+            console.log("ready: " + xhr.readyState, " | type: " + xhr.responseType, " | status:" + xhr.status, " | text:" + xhr.statusText);
+            console.log("response: " + xhr.response);
+        }
     }
 
     function createInput(): void {
@@ -83,37 +105,21 @@ namespace HolyChristmasTree2 {
         p.innerHTML += "Geamtpreis " + total.toFixed(2) + "Euro";
     }
 
-    function checkOrder(_event: Event): void {
-        for (let key in offers) {
-            let category: Product[] = offers[key];
-            let fieldset: HTMLElement = document.getElementById(key);
-            let elements: HTMLCollection = <HTMLInputElement>fieldset.getElementsByClassName
-            for (let i: number = 0; 0 < ; i++) {
-                if 
-            }
 
 
 
 
 
 
-            //            document.getElementById("Lieferoptionen");
-            //            document.getElementById("text");
-            //            for (let a: number = 0; a < product.length; a++)
-            //                if (key == "tree" || "treeholder" || "Lieferoptionen" || "text") {
-            //                    document.getElementById("notSelectedYet").innerHTML = "I'm sorry, you need to fill out a few more things!"; 
-            //                }
-            //                   else {
-            //                    document.getElementById(el).innerHTML = "All done, thank you for your order!";
-            //                    } 
-
-
-        }
-
-    }
 
 
 
 }
+
+
+
+
+
+
 
 

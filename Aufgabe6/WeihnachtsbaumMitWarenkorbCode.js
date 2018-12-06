@@ -1,9 +1,28 @@
 var HolyChristmasTree2;
 (function (HolyChristmasTree2) {
     window.addEventListener("DOMContentLoaded", init);
+    let address = "http://localhost:8100";
     function init() {
         createInput();
-        document.getElementById("button").addEventListener("click", checkOrder);
+        let bestellButton = document.getElementById("Bestellbutton");
+        bestellButton.addEventListener("click", handleClickOnAsync);
+    }
+    function handleClickOnAsync(_event) {
+        let color = document.querySelector(":checked").value;
+        sendRequestWithCustomData(color);
+    }
+    function sendRequestWithCustomData(_color) {
+        let xhr = new XMLHttpRequest();
+        xhr.open("GET", address + "?color=" + _color, true);
+        xhr.addEventListener("readystatechange", handleStateChange);
+        xhr.send();
+    }
+    function handleStateChange(_event) {
+        var xhr = _event.target;
+        if (xhr.readyState == XMLHttpRequest.DONE) {
+            console.log("ready: " + xhr.readyState, " | type: " + xhr.responseType, " | status:" + xhr.status, " | text:" + xhr.statusText);
+            console.log("response: " + xhr.response);
+        }
     }
     function createInput() {
         for (let key in HolyChristmasTree2.offers) {
@@ -63,21 +82,6 @@ var HolyChristmasTree2;
             }
         }
         p.innerHTML += "Geamtpreis " + total.toFixed(2) + "Euro";
-    }
-    function checkOrder(_event) {
-        for (let key in HolyChristmasTree2.offers) {
-            let product = HolyChristmasTree2.offers[key];
-            let fieldset = document.getElementById(key);
-            document.getElementById("Lieferoptionen");
-            document.getElementById("text");
-            for (let a = 0; a < product.length; a++)
-                if (key == "tree" || "treeholder" || "Lieferoptionen" || "text") {
-                    document.getElementById("notSelectedYet").innerHTML = "I'm sorry, you need to fill out a few more things!";
-                }
-                else {
-                    document.getElementById("notSelectedYet").innerHTML = "All done, thank you for your order!";
-                }
-        }
     }
 })(HolyChristmasTree2 || (HolyChristmasTree2 = {}));
 //# sourceMappingURL=WeihnachtsbaumMitWarenkorbCode.js.map

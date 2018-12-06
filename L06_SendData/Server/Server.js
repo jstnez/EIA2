@@ -28,6 +28,7 @@ var L06_SendData;
                 console.log(key);
                 _response.write(key + " = " + url[key] + "<br>");
             }
+            console.log();
             _response.end(); //konversation wird beendet
         }
     })(HolyChrismastree3 || (HolyChrismastree3 = {}));
