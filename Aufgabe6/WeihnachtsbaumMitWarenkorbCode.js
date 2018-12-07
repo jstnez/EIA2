@@ -1,7 +1,7 @@
 var HolyChristmasTree2;
 (function (HolyChristmasTree2) {
     window.addEventListener("DOMContentLoaded", init);
-    let address = "http://localhost:8100";
+    let address = "http://eia2-justine.herokuapp.com";
     function init() {
         createInput();
         let bestellButton = document.getElementById("Bestellbutton");

@@ -1,6 +1,6 @@
 namespace HolyChristmasTree2 {
     window.addEventListener("DOMContentLoaded", init);
-    let address: string = "http://localhost:8100";
+    let address: string = "http://eia2-justine.herokuapp.com";
 
     function init(): void {
         createInput();
