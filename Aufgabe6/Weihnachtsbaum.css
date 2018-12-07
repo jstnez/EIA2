@@ -8,7 +8,7 @@ html {background-color: #514646}
 h1{
 	font-size: 50px;
 	color: white;
-    font-family: 'Dancing Script', cursive;
+   
     font-family: 'Give You Glory', cursive;
 
 
@@ -16,11 +16,7 @@ h1{
 	
 fieldset {background-color: #DA4343;
 	color:white;
-    font-family: 'Dancing Script', cursive;
-    font-family: 'Give You Glory', cursive;
-    font-family: 'Shadows Into Light Two', cursive;
-    font-family: 'Playfair Display', serif;
-    font-family: 'Wire One', sans-serif;
+   
     font-family: 'Open Sans Condensed', sans-serif;
     width: 400px;
     margin-left: 200px;
@@ -40,12 +36,32 @@ legend { font-size: 20px;
 	top: 250px;
 	border: white dotted;
 	color: white;
-	font-family: 'Dancing Script', cursive;
-    font-family: 'Give You Glory', cursive;
-    font-family: 'Shadows Into Light Two', cursive;
-    font-family: 'Playfair Display', serif;
-    font-family: 'Wire One', sans-serif;
+	
     font-family: 'Open Sans Condensed', sans-serif;
     font-size: 20px;
      width: 400px;
+}
+
+#order {
+	background-color: #DA4343;
+	position: absolute;
+	right: 200px;
+	top: 900px;
+	border: white dotted;
+	color: white;
+	
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 20px;
+     width: 400px;
+	
+}
+
+h4 {
+	color: white;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 20px;
+    position:absolute;
+    top: 850px;
+    right:200px;  
+	
 }

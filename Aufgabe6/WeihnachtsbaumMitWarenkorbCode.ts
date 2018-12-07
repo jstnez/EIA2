@@ -9,13 +9,35 @@ namespace HolyChristmasTree2 {
     }
 
     function handleClickOnAsync(_event: Event): void {
-        let color: string = (<HTMLInputElement>document.querySelector(":checked")).value;
-        sendRequestWithCustomData(color);
+        document.getElementById("order").innerHTML =  " "; 
+        let inputs: NodeListOf<HTMLInputElement> = document.getElementsByTagName("input");
+        for (let i: number = 0; i < inputs.length; i++) {
+            let input: HTMLInputElement = inputs[i];
+            if (input.type == "number") {
+                if (parseInt(input.value) > 0) {
+                    sendRequestWithCustomData(input.name, parseInt(input.value));
+                }
+            }
+
+            if (input.checked == true) {
+                sendRequestWithCustomData(input.value, 1);
+
+            }
+        }
+
+
+        let product: string = (<HTMLInputElement>document.querySelector(":checked")).value;
+
+
+
+
+
+        console.log(product);
     }
 
-    function sendRequestWithCustomData(_color: string): void {
+    function sendRequestWithCustomData(_product: string, _amount: number): void {
         let xhr: XMLHttpRequest = new XMLHttpRequest();
-        xhr.open("GET", address + "?color=" + _color, true);
+        xhr.open("GET", address + "?" + _product + "=" + _amount, true);
         xhr.addEventListener("readystatechange", handleStateChange);
         xhr.send();
     }
@@ -25,6 +47,12 @@ namespace HolyChristmasTree2 {
         if (xhr.readyState == XMLHttpRequest.DONE) {
             console.log("ready: " + xhr.readyState, " | type: " + xhr.responseType, " | status:" + xhr.status, " | text:" + xhr.statusText);
             console.log("response: " + xhr.response);
+            
+           
+            document.getElementById("order").innerHTML += xhr.response;
+
+            
+         
         }
     }
 

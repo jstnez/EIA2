@@ -8,12 +8,25 @@ var HolyChristmasTree2;
         bestellButton.addEventListener("click", handleClickOnAsync);
     }
     function handleClickOnAsync(_event) {
-        let color = document.querySelector(":checked").value;
-        sendRequestWithCustomData(color);
+        document.getElementById("order").innerHTML = " ";
+        let inputs = document.getElementsByTagName("input");
+        for (let i = 0; i < inputs.length; i++) {
+            let input = inputs[i];
+            if (input.type == "number") {
+                if (parseInt(input.value) > 0) {
+                    sendRequestWithCustomData(input.name, parseInt(input.value));
+                }
+            }
+            if (input.checked == true) {
+                sendRequestWithCustomData(input.value, 1);
+            }
+        }
+        let product = document.querySelector(":checked").value;
+        console.log(product);
     }
-    function sendRequestWithCustomData(_color) {
+    function sendRequestWithCustomData(_product, _amount) {
         let xhr = new XMLHttpRequest();
-        xhr.open("GET", address + "?color=" + _color, true);
+        xhr.open("GET", address + "?" + _product + "=" + _amount, true);
         xhr.addEventListener("readystatechange", handleStateChange);
         xhr.send();
     }
@@ -22,6 +35,7 @@ var HolyChristmasTree2;
         if (xhr.readyState == XMLHttpRequest.DONE) {
             console.log("ready: " + xhr.readyState, " | type: " + xhr.responseType, " | status:" + xhr.status, " | text:" + xhr.statusText);
             console.log("response: " + xhr.response);
+            document.getElementById("order").innerHTML += xhr.response;
         }
     }
     function createInput() {
