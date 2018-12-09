@@ -7,7 +7,7 @@ namespace L06_SendData {
         setupColorDivs();
     }
 
-    function setupColorDivs(): void {
+    function setupColorDivs(): void { 
         let colors: string[] = ["red", "green", "blue"];
         let divs: NodeListOf<HTMLDivElement> = document.getElementsByTagName("div");
         for (let i: number = 0; i < divs.length; i++) {
