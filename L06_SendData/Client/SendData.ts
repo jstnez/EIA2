@@ -1,6 +1,6 @@
 namespace L06_SendData {
     window.addEventListener("load", init);
-    let address: string = "http://localhost:8100";
+    let address: string = "http://eia2-justine.herokuapp.com";
     //let address: string = "https://eia2-nodetest.herokuapp.com";
 
     function init(_event: Event): void {
