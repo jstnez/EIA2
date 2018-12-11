@@ -6,7 +6,7 @@ namespace L06_SendData { //klassischer namespace
     namespace HolyChrismastree3 {
     interface Product {
         [key: string]: number;
-}
+} 
    
     
     console.log("Starting server"); //Konsolenausgabe von "Starting server"

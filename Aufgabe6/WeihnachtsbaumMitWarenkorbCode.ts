@@ -1,13 +1,13 @@
 namespace HolyChristmasTree2 {
     window.addEventListener("DOMContentLoaded", init);
-    let address: string = "http://eia2-justine.herokuapp.com";
+    let address: string = "https://eia2-justine.herokuapp.com";
 
     function init(): void {
         createInput();
         let bestellButton: HTMLElement = document.getElementById("Bestellbutton");
         bestellButton.addEventListener("click", handleClickOnAsync);
     }
-
+ 
     function handleClickOnAsync(_event: Event): void {
         document.getElementById("order").innerHTML =  " "; 
         let inputs: NodeListOf<HTMLInputElement> = document.getElementsByTagName("input");

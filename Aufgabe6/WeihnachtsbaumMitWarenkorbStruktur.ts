@@ -12,7 +12,7 @@ namespace HolyChristmasTree2 {
     export interface Product {
         name: string;
         price: number;
-    }
+    } 
 
 
     export interface ProductGroups {
