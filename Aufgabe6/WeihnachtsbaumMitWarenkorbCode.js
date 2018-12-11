@@ -2,6 +2,7 @@ var HolyChristmasTree2;
 (function (HolyChristmasTree2) {
     window.addEventListener("DOMContentLoaded", init);
     let address = "https://eia2-justine.herokuapp.com";
+    let url;
     function init() {
         createInput();
         let bestellButton = document.getElementById("Bestellbutton");
@@ -9,24 +10,26 @@ var HolyChristmasTree2;
     }
     function handleClickOnAsync(_event) {
         document.getElementById("order").innerHTML = " ";
+        url = " ";
         let inputs = document.getElementsByTagName("input");
         for (let i = 0; i < inputs.length; i++) {
             let input = inputs[i];
             if (input.type == "number") {
                 if (parseInt(input.value) > 0) {
-                    sendRequestWithCustomData(input.name, parseInt(input.value));
+                    url += input.name + "=" + parseInt(input.value) + "&";
                 }
             }
             if (input.checked == true) {
-                sendRequestWithCustomData(input.value, 1);
+                url += input.value + "=" + 1 + "&";
             }
         }
+        sendRequestWithCustomData();
         let product = document.querySelector(":checked").value;
         console.log(product);
     }
-    function sendRequestWithCustomData(_product, _amount) {
+    function sendRequestWithCustomData() {
         let xhr = new XMLHttpRequest();
-        xhr.open("GET", address + "?" + _product + "=" + _amount, true);
+        xhr.open("GET", address + "?" + url, true);
         xhr.addEventListener("readystatechange", handleStateChange);
         xhr.send();
     }

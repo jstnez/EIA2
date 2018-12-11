@@ -1,29 +1,34 @@
 namespace HolyChristmasTree2 {
     window.addEventListener("DOMContentLoaded", init);
     let address: string = "https://eia2-justine.herokuapp.com";
+    
+    let url: string;
 
     function init(): void {
         createInput();
         let bestellButton: HTMLElement = document.getElementById("Bestellbutton");
         bestellButton.addEventListener("click", handleClickOnAsync);
     }
- 
+
     function handleClickOnAsync(_event: Event): void {
-        document.getElementById("order").innerHTML =  " "; 
+        document.getElementById("order").innerHTML = " ";
+        url = " ";
         let inputs: NodeListOf<HTMLInputElement> = document.getElementsByTagName("input");
         for (let i: number = 0; i < inputs.length; i++) {
             let input: HTMLInputElement = inputs[i];
             if (input.type == "number") {
                 if (parseInt(input.value) > 0) {
-                    sendRequestWithCustomData(input.name, parseInt(input.value));
+                    url += input.name + "=" + parseInt(input.value) + "&";
                 }
             }
 
             if (input.checked == true) {
-                sendRequestWithCustomData(input.value, 1);
+                url += input.value + "=" + 1 + "&";
 
             }
         }
+
+        sendRequestWithCustomData();
 
 
         let product: string = (<HTMLInputElement>document.querySelector(":checked")).value;
@@ -35,9 +40,9 @@ namespace HolyChristmasTree2 {
         console.log(product);
     }
 
-    function sendRequestWithCustomData(_product: string, _amount: number): void {
+    function sendRequestWithCustomData(): void {
         let xhr: XMLHttpRequest = new XMLHttpRequest();
-        xhr.open("GET", address + "?" + _product + "=" + _amount, true);
+        xhr.open("GET", address + "?" + url, true);
         xhr.addEventListener("readystatechange", handleStateChange);
         xhr.send();
     }
@@ -47,12 +52,12 @@ namespace HolyChristmasTree2 {
         if (xhr.readyState == XMLHttpRequest.DONE) {
             console.log("ready: " + xhr.readyState, " | type: " + xhr.responseType, " | status:" + xhr.status, " | text:" + xhr.statusText);
             console.log("response: " + xhr.response);
-            
-           
+
+
             document.getElementById("order").innerHTML += xhr.response;
 
-            
-         
+
+
         }
     }
 
