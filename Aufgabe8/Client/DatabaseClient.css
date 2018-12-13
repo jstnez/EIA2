@@ -1,0 +1,12 @@
+* {
+	display: block;
+	vertical-align: top
+}
+
+head {
+	display: none;
+}
+
+fieldset {
+	width: 300px;
+}
