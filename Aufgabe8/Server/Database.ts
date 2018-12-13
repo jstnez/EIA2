@@ -63,7 +63,7 @@ export function findAll(_callback: Function): void {
 
 export function findMatrikel(matrikel: number, _callback: Function): void {
     // cursor points to the retreived set of documents in memory
-    var cursor: Mongo.Cursor = students.find();
+    var cursor: Mongo.Cursor = students.find(matrikel);
     // try to convert to array, then activate callback "prepareAnswer"
     cursor.toArray(prepareAnswer);
     
