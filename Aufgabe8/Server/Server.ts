@@ -45,7 +45,7 @@ function handleRequest(_request: Http.IncomingMessage, _response: Http.ServerRes
             break;
 
         case "search":
-            let matrikel: number = parseInt(query["matrikel"]);
+            let matrikel: Matrikelnummer =  { matrikel: parseInt(query["matrikel"])};
             Database.findMatrikel(matrikel, findCallback);
             break;
             
