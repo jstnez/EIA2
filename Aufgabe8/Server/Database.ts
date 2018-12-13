@@ -13,8 +13,8 @@ let students: Mongo.Collection;
 // running on heroku?
 if (process.env.NODE_ENV == "production") {
     //    databaseURL = "mongodb://username:password@hostname:port/database";
-    databaseURL = "mongodb://testuser:testpassword@ds129532.mlab.com:29532/eia2";
-    databaseName = "eia2";
+    databaseURL = "mongodb://Justine:passwort1@ds047504.mlab.com:47504/studenten";
+    databaseName = "studenten";
 }
 
 // try to connect to database, then activate callback "handleConnect" 
