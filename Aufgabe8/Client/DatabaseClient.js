@@ -9,6 +9,13 @@ var DatabaseClient;
         let refreshButton = document.getElementById("refresh");
         insertButton.addEventListener("click", insert);
         refreshButton.addEventListener("click", refresh);
+        let suche = document.getElementById("suche");
+        suche.addEventListener("click", find);
+    }
+    function find(_event) {
+        let input = document.getElementById("MN");
+        let url = "command=search" + "&" + "matrikel" + "=" + input.value;
+        sendRequest(url, handleFindResponse);
     }
     function insert(_event) {
         let inputs = document.getElementsByTagName("input");

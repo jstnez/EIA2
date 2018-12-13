@@ -1,7 +1,7 @@
 namespace DatabaseClient {
     window.addEventListener("load", init);
     //let serverAddress: string = "http://localhost:8100";
-    let serverAddress: string = "https://eia2-justine.herokuapp.com/";    
+    let serverAddress: string = "https://eia2-justine.herokuapp.com/";
 
     function init(_event: Event): void {
         console.log("Init");
@@ -9,7 +9,16 @@ namespace DatabaseClient {
         let refreshButton: HTMLButtonElement = <HTMLButtonElement>document.getElementById("refresh");
         insertButton.addEventListener("click", insert);
         refreshButton.addEventListener("click", refresh);
+        let suche: HTMLButtonElement = <HTMLButtonElement>document.getElementById("suche");
+        suche.addEventListener("click", find);
     }
+
+    function find(_event: Event): void {
+        let input: HTMLInputElement = <HTMLInputElement>document.getElementById("MN");
+        let url: string = "command=search" + "&" + "matrikel" + "=" + input.value;
+        sendRequest(url, handleFindResponse);
+    }
+
 
     function insert(_event: Event): void {
         let inputs: NodeListOf<HTMLInputElement> = document.getElementsByTagName("input");
