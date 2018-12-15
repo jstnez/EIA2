@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css?family=Anton');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300');
+
 * {
 	display: block;
 	vertical-align: top
@@ -9,4 +12,31 @@ head {
 
 fieldset {
 	width: 300px;
+	color:#FF3535;
+	border: none; 
+	font-family: 'Open Sans Condensed', sans-serif;
+	margin: 1em;
+	
 }
+
+h1 {
+	color: #FF3535;
+	font-size: 30px;
+	font-family: 'Anton', sans-serif;
+	margin: 1em;
+}
+
+html {
+	background: #FAF2F2;
+}
+
+button {
+  border-color: #f44336;
+  color: red
+}
+
+button:hover {
+  background: #f44336;
+  color: white;
+
+
