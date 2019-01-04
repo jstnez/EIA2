@@ -16,6 +16,7 @@ fieldset {
 	border: none; 
 	font-family: 'Open Sans Condensed', sans-serif;
 	margin: 1em;
+	left: 30em;
 	
 }
 
@@ -32,11 +33,12 @@ html {
 
 button {
   border-color: #f44336;
-  color: red
+  color: red;
+  font-family: 'Open Sans Condensed', sans-serif;
 }
 
 button:hover {
   background: #f44336;
   color: white;
-
-
+  font-family: 'Open Sans Condensed', sans-serif;
+}
