@@ -114,24 +114,8 @@ var rodelbahn;
         for (let i = 0; i < 4; i++) {
             let x = 550 + Math.random() * 150;
             let y = 600 + Math.random() * 150;
-            drawTrees2(x, y);
+            drawTrees(x, y);
         }
-    }
-    function drawTrees2(_x, _y) {
-        rodelbahn.crc2.beginPath();
-        rodelbahn.crc2.moveTo(_x - 10, _y + 70);
-        rodelbahn.crc2.lineTo(_x + 10, _y + 70);
-        rodelbahn.crc2.lineTo(_x + 7, _y - 0);
-        rodelbahn.crc2.closePath();
-        rodelbahn.crc2.fillStyle = "#612A05";
-        rodelbahn.crc2.fill();
-        rodelbahn.crc2.beginPath();
-        rodelbahn.crc2.moveTo(_x - 30, _y + 50);
-        rodelbahn.crc2.lineTo(_x, _y - 20);
-        rodelbahn.crc2.lineTo(_x + 30, _y + 50);
-        rodelbahn.crc2.closePath();
-        rodelbahn.crc2.fillStyle = "#018A0E";
-        rodelbahn.crc2.fill();
     }
     function generateSnow() {
         for (let i = 0; i < 500; i++) {

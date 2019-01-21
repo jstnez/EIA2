@@ -165,32 +165,10 @@ namespace rodelbahn {
         for (let i: number = 0; i < 4; i++) {
             let x: number = 550 + Math.random() * 150;
             let y: number = 600 + Math.random() * 150;
-            drawTrees2(x, y);
+            drawTrees(x, y);
         }
     }
 
-    function drawTrees2(_x: number, _y: number): void {
-
-
-        crc2.beginPath();
-        crc2.moveTo(_x - 10, _y + 70);
-        crc2.lineTo(_x + 10, _y + 70);
-
-        crc2.lineTo(_x + 7, _y - 0);
-        crc2.closePath();
-
-        crc2.fillStyle = "#612A05";
-        crc2.fill();
-
-        crc2.beginPath();
-        crc2.moveTo(_x - 30, _y + 50);
-        crc2.lineTo(_x, _y - 20);
-        crc2.lineTo(_x + 30, _y + 50);
-        crc2.closePath();
-
-        crc2.fillStyle = "#018A0E";
-        crc2.fill();
-    }
 
     function generateSnow(): void {
 
@@ -198,7 +176,7 @@ namespace rodelbahn {
             let snowflake: Snow = new Snow();
             snowflake.xPos = Math.random() * 700;
             snowflake.yPos = Math.random() * 1100;
-            
+
             snowflake.draw();
 
             snowflakes.push(snowflake);
@@ -226,7 +204,7 @@ namespace rodelbahn {
             let childu: ChildUp = new ChildUp();
             childu.xPos = Math.random() * 100 + 500;
             childu.yPos = Math.random() * 100 + 900;
-             childu.color = childu.getRandomColor();
+            childu.color = childu.getRandomColor();
             childu.draw();
 
             childsUp.push(childu);
