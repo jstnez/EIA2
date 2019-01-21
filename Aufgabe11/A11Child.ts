@@ -95,7 +95,7 @@ namespace rodelbahnA11 {
             this.xPos += this.xDir;
             this.yPos += this.yDir;
 
-            if (this.xPos > 750) {
+            if (this.xPos > 600) {
                 this.mDown = false;
             }
 
@@ -178,7 +178,7 @@ namespace rodelbahnA11 {
             this.xPos += this.xDir;
             this.yPos += this.yDir;
 
-            if (this.xPos < 0) {
+            if (this.xPos < 50) {
                 this.mDown = true;
             }
 

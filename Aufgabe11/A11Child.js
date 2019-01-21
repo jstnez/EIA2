@@ -68,7 +68,7 @@ var rodelbahnA11;
             this.xDir = 5;
             this.xPos += this.xDir;
             this.yPos += this.yDir;
-            if (this.xPos > 750) {
+            if (this.xPos > 600) {
                 this.mDown = false;
             }
         }
@@ -130,7 +130,7 @@ var rodelbahnA11;
             this.xDir = Math.random() * (-5);
             this.xPos += this.xDir;
             this.yPos += this.yDir;
-            if (this.xPos < 0) {
+            if (this.xPos < 50) {
                 this.mDown = true;
             }
         }
