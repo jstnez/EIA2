@@ -1,6 +1,8 @@
 var rodelbahnA12;
 (function (rodelbahnA12) {
     window.addEventListener("load", init);
+    let life = 10;
+    let score = 0;
     let snowball;
     let allMovingObjects = [];
     // let i: number = 0;
@@ -16,24 +18,35 @@ var rodelbahnA12;
         drawCloud1();
         drawCloud2();
         imgData = rodelbahnA12.crc2.getImageData(0, 0, 700, 1100);
-        //        generateSnow();
+        generateSnow();
         generateChild();
         update();
     }
     function checkIfHit() {
         if (snowball.radius <= 6) {
             console.log(allMovingObjects);
+            let hit = false;
             for (let i = 0; i < allMovingObjects.length; i++) {
                 if (allMovingObjects[i] instanceof rodelbahnA12.Child) {
                     if (childChecked(i)) {
-                        allMovingObjects.splice(i, 1);
-                        console.log("splice child");
-                        console.log(allMovingObjects);
-                    }
-                    else {
+                        allMovingObjects[i].onlysledge = true;
+                        hit = true;
+                        if (allMovingObjects[i].mDown) {
+                            score += 20;
+                            console.log(score);
+                        }
+                        else {
+                            score += 10;
+                            console.log(score);
+                        }
+                        break;
                     }
                 }
             }
+            if (!hit) {
+                life--;
+            }
+            console.log(life);
             snowball = null;
             for (let i = 0; i < allMovingObjects.length; i++) {
                 if (allMovingObjects[i] instanceof rodelbahnA12.Snowball) {
@@ -53,13 +66,17 @@ var rodelbahnA12;
         if (!snowball) {
             snowball = new rodelbahnA12.Snowball();
             allMovingObjects.push(snowball);
-            snowball.xPos = _event.clientX;
-            snowball.yPos = _event.clientY;
+            snowball.xPos = _event.pageX;
+            snowball.yPos = _event.pageY;
         }
     }
     function update() {
         rodelbahnA12.crc2.putImageData(imgData, 0, 0);
         window.setTimeout(update, 1000 / fps);
+        rodelbahnA12.crc2.font = "50px Verdana";
+        rodelbahnA12.crc2.fillText("score" + " " + score, 50, 50);
+        rodelbahnA12.crc2.font = "50px Verdana";
+        rodelbahnA12.crc2.fillText("life" + " " + life, 50, 100);
         for (let i = 0; i < allMovingObjects.length; i++) {
             let object = allMovingObjects[i];
             object.draw();
@@ -68,6 +85,8 @@ var rodelbahnA12;
         if (snowball) {
             snowball.radius -= 2;
             checkIfHit();
+        }
+        if (life <= 0) {
         }
     }
     function generateTrees() {

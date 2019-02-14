@@ -3,10 +3,14 @@ var rodelbahnA12;
     class Child extends rodelbahnA12.DrawObjects {
         constructor() {
             super();
+            this.initialise();
+        }
+        initialise() {
             this.xPos = Math.random() * 100;
             this.yPos = Math.random() * 250 + 400;
             this.mDown = true;
             this.color = this.getRandomColor();
+            this.onlysledge = false;
         }
         draw() {
             if (this.mDown == true) {
@@ -21,23 +25,35 @@ var rodelbahnA12;
                 this.moveDown();
             }
             else {
-                this.moveUp();
+                if (this.onlysledge == true) {
+                    this.moveDown();
+                    if (this.xPos >= 800) {
+                        this.initialise();
+                    }
+                }
+                else {
+                    this.moveUp();
+                }
             }
         }
         drawDown() {
-            rodelbahnA12.crc2.beginPath();
-            rodelbahnA12.crc2.arc(this.xPos + 25, this.yPos - 50, 10, 0, 2 * Math.PI, false);
-            rodelbahnA12.crc2.fillStyle = "#FFD8BE";
-            rodelbahnA12.crc2.fill();
-            rodelbahnA12.crc2.lineWidth = .2;
-            rodelbahnA12.crc2.strokeStyle = "#A57658";
-            rodelbahnA12.crc2.stroke();
-            rodelbahnA12.crc2.fillStyle = this.color;
-            rodelbahnA12.crc2.beginPath();
-            rodelbahnA12.crc2.moveTo(this.xPos + 10, this.yPos - 15);
-            rodelbahnA12.crc2.lineTo(this.xPos + 45, this.yPos - 15);
-            rodelbahnA12.crc2.lineTo(this.xPos + 25, this.yPos - 40);
-            rodelbahnA12.crc2.fill();
+            //kind
+            if (this.onlysledge == false) {
+                rodelbahnA12.crc2.beginPath();
+                rodelbahnA12.crc2.arc(this.xPos + 25, this.yPos - 50, 10, 0, 2 * Math.PI, false);
+                rodelbahnA12.crc2.fillStyle = "#FFD8BE";
+                rodelbahnA12.crc2.fill();
+                rodelbahnA12.crc2.lineWidth = .2;
+                rodelbahnA12.crc2.strokeStyle = "#A57658";
+                rodelbahnA12.crc2.stroke();
+                rodelbahnA12.crc2.fillStyle = this.color;
+                rodelbahnA12.crc2.beginPath();
+                rodelbahnA12.crc2.moveTo(this.xPos + 10, this.yPos - 15);
+                rodelbahnA12.crc2.lineTo(this.xPos + 45, this.yPos - 15);
+                rodelbahnA12.crc2.lineTo(this.xPos + 25, this.yPos - 40);
+                rodelbahnA12.crc2.fill();
+            }
+            //schlitten
             rodelbahnA12.crc2.beginPath();
             rodelbahnA12.crc2.moveTo(this.xPos, this.yPos);
             rodelbahnA12.crc2.lineTo(this.xPos + 55, this.yPos);
@@ -80,20 +96,22 @@ var rodelbahnA12;
         }
         //childup
         drawUp() {
-            rodelbahnA12.crc2.beginPath();
-            rodelbahnA12.crc2.arc(this.xPos - 45, this.yPos - 45, 10, 0, 2 * Math.PI, false);
-            rodelbahnA12.crc2.fillStyle = "#FFD8BE";
-            rodelbahnA12.crc2.fill();
-            rodelbahnA12.crc2.lineWidth = .2;
-            rodelbahnA12.crc2.strokeStyle = "#A57658";
-            rodelbahnA12.crc2.stroke();
-            rodelbahnA12.crc2.beginPath();
-            rodelbahnA12.crc2.moveTo(this.xPos - 35, this.yPos);
-            rodelbahnA12.crc2.lineTo(this.xPos - 55, this.yPos);
-            rodelbahnA12.crc2.lineTo(this.xPos - 55, this.yPos - 35);
-            rodelbahnA12.crc2.lineTo(this.xPos - 35, this.yPos - 35);
-            rodelbahnA12.crc2.fillStyle = this.color;
-            rodelbahnA12.crc2.fill();
+            if (this.onlysledge == false) {
+                rodelbahnA12.crc2.beginPath();
+                rodelbahnA12.crc2.arc(this.xPos - 45, this.yPos - 45, 10, 0, 2 * Math.PI, false);
+                rodelbahnA12.crc2.fillStyle = "#FFD8BE";
+                rodelbahnA12.crc2.fill();
+                rodelbahnA12.crc2.lineWidth = .2;
+                rodelbahnA12.crc2.strokeStyle = "#A57658";
+                rodelbahnA12.crc2.stroke();
+                rodelbahnA12.crc2.beginPath();
+                rodelbahnA12.crc2.moveTo(this.xPos - 35, this.yPos);
+                rodelbahnA12.crc2.lineTo(this.xPos - 55, this.yPos);
+                rodelbahnA12.crc2.lineTo(this.xPos - 55, this.yPos - 35);
+                rodelbahnA12.crc2.lineTo(this.xPos - 35, this.yPos - 35);
+                rodelbahnA12.crc2.fillStyle = this.color;
+                rodelbahnA12.crc2.fill();
+            }
             rodelbahnA12.crc2.beginPath();
             rodelbahnA12.crc2.moveTo(this.xPos, this.yPos);
             rodelbahnA12.crc2.lineTo(this.xPos + 55, this.yPos);

@@ -4,17 +4,25 @@ namespace rodelbahnA12 {
 
         xDir: number;
         yDir: number;
-        mDown: boolean;
+       
         color: string;
+
 
         constructor() {
             super();
+            this.initialise();
+        }
+
+        
+        initialise(): void {
             this.xPos = Math.random() * 100;
             this.yPos = Math.random() * 250 + 400;
             this.mDown = true;
             this.color = this.getRandomColor();
+            this.onlysledge = false;
         }
-
+        
+        
         draw(): void {
             if (this.mDown == true) {
                 this.drawDown();
@@ -23,38 +31,51 @@ namespace rodelbahnA12 {
                 this.drawUp();
             }
         }
-        
+
         move(): void {
             if (this.mDown == true) {
                 this.moveDown();
             }
             else {
-                this.moveUp();
+
+                if (this.onlysledge == true) {
+                    this.moveDown();
+                    if (this.xPos >= 800) {
+                        this.initialise();
+                    }
+                }
+                else {
+                    this.moveUp();
+                }
             }
         }
 
         drawDown(): void {
 
-            crc2.beginPath();
-            crc2.arc(this.xPos + 25, this.yPos - 50, 10, 0, 2 * Math.PI, false);
-            crc2.fillStyle = "#FFD8BE";
-            crc2.fill();
-            crc2.lineWidth = .2;
-            crc2.strokeStyle = "#A57658";
-            crc2.stroke();
+            //kind
 
-            crc2.fillStyle = this.color;
-            crc2.beginPath();
-            crc2.moveTo(this.xPos + 10, this.yPos - 15);
-            
-            crc2.lineTo(this.xPos + 45, this.yPos - 15);
-            crc2.lineTo(this.xPos + 25, this.yPos - 40);
-           
-            
+            if (this.onlysledge == false) {
+                crc2.beginPath();
+                crc2.arc(this.xPos + 25, this.yPos - 50, 10, 0, 2 * Math.PI, false);
+                crc2.fillStyle = "#FFD8BE";
+                crc2.fill();
+                crc2.lineWidth = .2;
+                crc2.strokeStyle = "#A57658";
+                crc2.stroke();
+
+                crc2.fillStyle = this.color;
+                crc2.beginPath();
+                crc2.moveTo(this.xPos + 10, this.yPos - 15);
+
+                crc2.lineTo(this.xPos + 45, this.yPos - 15);
+                crc2.lineTo(this.xPos + 25, this.yPos - 40);
 
 
+                crc2.fill();
 
-            crc2.fill();
+            }
+
+            //schlitten
 
             crc2.beginPath();
             crc2.moveTo(this.xPos, this.yPos);
@@ -115,22 +136,25 @@ namespace rodelbahnA12 {
 
         drawUp(): void {
 
-            crc2.beginPath();
-            crc2.arc(this.xPos - 45, this.yPos - 45, 10, 0, 2 * Math.PI, false);
-            crc2.fillStyle = "#FFD8BE";
-            crc2.fill();
-            crc2.lineWidth = .2;
-            crc2.strokeStyle = "#A57658";
-            crc2.stroke();
+            if (this.onlysledge == false) {
+                crc2.beginPath();
+                crc2.arc(this.xPos - 45, this.yPos - 45, 10, 0, 2 * Math.PI, false);
+                crc2.fillStyle = "#FFD8BE";
+                crc2.fill();
+                crc2.lineWidth = .2;
+                crc2.strokeStyle = "#A57658";
+                crc2.stroke();
 
-            crc2.beginPath();
-            crc2.moveTo(this.xPos - 35, this.yPos);
-            crc2.lineTo(this.xPos - 55, this.yPos);
-            crc2.lineTo(this.xPos - 55, this.yPos - 35);
-            crc2.lineTo(this.xPos - 35, this.yPos - 35);
+                crc2.beginPath();
+                crc2.moveTo(this.xPos - 35, this.yPos);
+                crc2.lineTo(this.xPos - 55, this.yPos);
+                crc2.lineTo(this.xPos - 55, this.yPos - 35);
+                crc2.lineTo(this.xPos - 35, this.yPos - 35);
 
-            crc2.fillStyle = this.color;
-            crc2.fill();
+                crc2.fillStyle = this.color;
+                crc2.fill();
+
+            }
 
             crc2.beginPath();
             crc2.moveTo(this.xPos, this.yPos);
