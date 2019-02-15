@@ -10,8 +10,36 @@
 <script src="A12Snowball.js" type="text/javascript" charset="utf-8"></script>
 <script src="A12Trees.js" type="text/javascript" charset="utf-8"></script>
 <script src="A12Main.js" type="text/javascript" charset="utf-8"></script>
- </head>
+<script src="Client/DatabaseClient.js" type="text/javascript" charset="utf-8"></script>
+</head>
 <body>
+	
+	<div id= "Startbildschirm">
+		<h1>SCHNEEBALLSCHLACHT</h1>
+
+		<fieldset>
+			<legend> Deinen Namen bitte :) </legend>
+			
+			<input type="text" name="Text" placeholder="Who migth be the best?" value="" required />
+			<hr />
+			<p>Streng dich an, nur die 10 Besten werden im Highscore angezeigt.</p>
+
+		</fieldset>
+
+		<button id="startbutton" type="button">Lasst uns die Schlacht beginnen</button>
+	</div>
+	
 	<canvas width=700 height=1100></canvas>
+	
+	<div id= "Endbildschirm">
+	<h2>SPIELENDE</h2>
+	<p> Blöd, all deine Leben sind weg :(</p>
+	
+	<p>Highscore</p>
+	
+	
+</div>
+
+
 </body>
 </html>

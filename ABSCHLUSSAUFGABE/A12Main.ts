@@ -2,8 +2,10 @@ namespace rodelbahnA12 {
     window.addEventListener("load", init);
     export let crc2: CanvasRenderingContext2D;
 
+
+    export let name: string;
     let life: number = 10;
-    let score: number = 0;
+    export let score: number = 0;
     let snowball: Snowball;
     let allMovingObjects: DrawObjects[] = [];
     // let i: number = 0;
@@ -16,22 +18,37 @@ namespace rodelbahnA12 {
 
 
 
-    function init(_event: Event): void {
-        let canvas: HTMLCanvasElement = document.getElementsByTagName("canvas")[0];
-        crc2 = canvas.getContext("2d");
-        canvas.addEventListener("click", throwsnowball);
+    function init(): void {
+        document.getElementById("Endbildschirm").hidden = true;
+        let spielstart: HTMLElement = document.getElementById("startbutton");
 
-        drawSky();
-        drawSun();
-        //        generateTrees();
-        drawCloud1();
-        drawCloud2();
-        imgData = crc2.getImageData(0, 0, 700, 1100);
-        generateSnow();
-        generateChild();
+        spielstart.addEventListener("click", spielStart);
 
-        update();
+    }
 
+
+    function spielStart(_event: Event): void {
+
+        name = document.getElementsByTagName("input")[0].value;
+        if (name != "") {
+
+            document.getElementById("Startbildschirm").hidden = true;
+
+            let canvas: HTMLCanvasElement = document.getElementsByTagName("canvas")[0];
+            crc2 = canvas.getContext("2d");
+            canvas.addEventListener("click", throwsnowball);
+
+            drawSky();
+            drawSun();
+            generateTrees();
+            drawCloud1();
+            drawCloud2();
+            imgData = crc2.getImageData(0, 0, 700, 1100);
+            generateSnow();
+            generateChild();
+
+            update();
+        }
     }
 
     function checkIfHit(): void {
@@ -106,12 +123,12 @@ namespace rodelbahnA12 {
 
         crc2.font = "50px Verdana";
         crc2.fillText("score" + " " + score, 50, 50);
-        
+
 
         crc2.font = "50px Verdana";
         crc2.fillText("life" + " " + life, 50, 100);
 
-       
+
 
 
         for (let i: number = 0; i < allMovingObjects.length; i++) {
@@ -128,7 +145,8 @@ namespace rodelbahnA12 {
         }
 
         if (life <= 0) {
-            //spielende, endbildschirm    
+            document.getElementById("Endbildschirm").hidden = false;
+            document.getElementsByTagName("canvas")[0].hidden = true;
         }
 
     }

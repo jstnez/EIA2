@@ -2,25 +2,34 @@ var rodelbahnA12;
 (function (rodelbahnA12) {
     window.addEventListener("load", init);
     let life = 10;
-    let score = 0;
+    rodelbahnA12.score = 0;
     let snowball;
     let allMovingObjects = [];
     // let i: number = 0;
     let fps = 25;
     let imgData;
-    function init(_event) {
-        let canvas = document.getElementsByTagName("canvas")[0];
-        rodelbahnA12.crc2 = canvas.getContext("2d");
-        canvas.addEventListener("click", throwsnowball);
-        drawSky();
-        drawSun();
-        //        generateTrees();
-        drawCloud1();
-        drawCloud2();
-        imgData = rodelbahnA12.crc2.getImageData(0, 0, 700, 1100);
-        generateSnow();
-        generateChild();
-        update();
+    function init() {
+        document.getElementById("Endbildschirm").hidden = true;
+        let spielstart = document.getElementById("startbutton");
+        spielstart.addEventListener("click", spielStart);
+    }
+    function spielStart(_event) {
+        rodelbahnA12.name = document.getElementsByTagName("input")[0].value;
+        if (rodelbahnA12.name != "") {
+            document.getElementById("Startbildschirm").hidden = true;
+            let canvas = document.getElementsByTagName("canvas")[0];
+            rodelbahnA12.crc2 = canvas.getContext("2d");
+            canvas.addEventListener("click", throwsnowball);
+            drawSky();
+            drawSun();
+            generateTrees();
+            drawCloud1();
+            drawCloud2();
+            imgData = rodelbahnA12.crc2.getImageData(0, 0, 700, 1100);
+            generateSnow();
+            generateChild();
+            update();
+        }
     }
     function checkIfHit() {
         if (snowball.radius <= 6) {
@@ -32,12 +41,12 @@ var rodelbahnA12;
                         allMovingObjects[i].onlysledge = true;
                         hit = true;
                         if (allMovingObjects[i].mDown) {
-                            score += 20;
-                            console.log(score);
+                            rodelbahnA12.score += 20;
+                            console.log(rodelbahnA12.score);
                         }
                         else {
-                            score += 10;
-                            console.log(score);
+                            rodelbahnA12.score += 10;
+                            console.log(rodelbahnA12.score);
                         }
                         break;
                     }
@@ -74,7 +83,7 @@ var rodelbahnA12;
         rodelbahnA12.crc2.putImageData(imgData, 0, 0);
         window.setTimeout(update, 1000 / fps);
         rodelbahnA12.crc2.font = "50px Verdana";
-        rodelbahnA12.crc2.fillText("score" + " " + score, 50, 50);
+        rodelbahnA12.crc2.fillText("score" + " " + rodelbahnA12.score, 50, 50);
         rodelbahnA12.crc2.font = "50px Verdana";
         rodelbahnA12.crc2.fillText("life" + " " + life, 50, 100);
         for (let i = 0; i < allMovingObjects.length; i++) {
@@ -87,6 +96,8 @@ var rodelbahnA12;
             checkIfHit();
         }
         if (life <= 0) {
+            document.getElementById("Endbildschirm").hidden = false;
+            document.getElementsByTagName("canvas")[0].hidden = true;
         }
     }
     function generateTrees() {
