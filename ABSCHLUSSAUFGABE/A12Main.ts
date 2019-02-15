@@ -18,6 +18,7 @@ namespace rodelbahnA12 {
 
 
 
+
     function init(): void {
         document.getElementById("Endbildschirm").hidden = true;
         let spielstart: HTMLElement = document.getElementById("startbutton");
@@ -119,8 +120,7 @@ namespace rodelbahnA12 {
 
     function update(): void {
         crc2.putImageData(imgData, 0, 0);
-        window.setTimeout(update, 1000 / fps);
-
+        
         crc2.font = "50px Verdana";
         crc2.fillText("score" + " " + score, 50, 50);
 
@@ -147,7 +147,14 @@ namespace rodelbahnA12 {
         if (life <= 0) {
             document.getElementById("Endbildschirm").hidden = false;
             document.getElementsByTagName("canvas")[0].hidden = true;
+            DatabaseClient.insert(); 
+            DatabaseClient.getHighscore();
+        } else {
+            window.setTimeout(update, 1000 / fps);
+
         }
+        
+  
 
     }
 

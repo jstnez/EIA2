@@ -7,7 +7,7 @@ namespace DatabaseClient {
 
     }
 
-    function insert(_event: Event): void {
+    export function insert(): void {
 
         let url: string = "command=insert" + "&" + "score" + "=" + rodelbahnA12.score + "&name=" + rodelbahnA12.name;
         sendRequest(url, handleInsertResponse);
@@ -16,7 +16,7 @@ namespace DatabaseClient {
 
 
 
-    function getHighscore(_event: Event): void {
+    export function getHighscore(): void {
         let query: string = "command=getHighscore";
         sendRequest(query, handleHighscoreResponse);
     }
@@ -38,7 +38,33 @@ namespace DatabaseClient {
     function handleHighscoreResponse(_event: ProgressEvent): void {
         let xhr: XMLHttpRequest = (<XMLHttpRequest>_event.target);
         if (xhr.readyState == XMLHttpRequest.DONE) {
-          console.log(xhr.response);
+            console.log(xhr.response);
+
+            let hs: Highscore[] = JSON.parse(xhr.response);
+
+            function sortierescores(_h1: Highscore, _h2: Highscore): number {
+                if (_h1.score > _h2.score) {
+                    return -1;
+                }
+                if (_h1.score < _h2.score) {
+                    return 1;
+                }
+
+                return 0;
+
+            }
+
+            hs.sort(sortierescores);
+            console.log(hs);
+
+
+            for (let b: number = 0; b < 10 && b < hs.length; b++) {
+                let div: HTMLDivElement = document.createElement("div");
+                document.getElementById("High").appendChild(div);
+                div.innerHTML = "Name" + hs[b].name;
+                div.innerHTML += "\t Score" + hs[b].score;
+
+            }
         }
     }
 }

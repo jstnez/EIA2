@@ -81,7 +81,6 @@ var rodelbahnA12;
     }
     function update() {
         rodelbahnA12.crc2.putImageData(imgData, 0, 0);
-        window.setTimeout(update, 1000 / fps);
         rodelbahnA12.crc2.font = "50px Verdana";
         rodelbahnA12.crc2.fillText("score" + " " + rodelbahnA12.score, 50, 50);
         rodelbahnA12.crc2.font = "50px Verdana";
@@ -98,6 +97,11 @@ var rodelbahnA12;
         if (life <= 0) {
             document.getElementById("Endbildschirm").hidden = false;
             document.getElementsByTagName("canvas")[0].hidden = true;
+            DatabaseClient.insert();
+            DatabaseClient.getHighscore();
+        }
+        else {
+            window.setTimeout(update, 1000 / fps);
         }
     }
     function generateTrees() {
