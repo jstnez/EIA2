@@ -66,7 +66,7 @@ var rodelbahnA12;
     }
     function childChecked(_i) {
         if (snowball.xPos >= allMovingObjects[_i].xPos && snowball.xPos <= allMovingObjects[_i].xPos + 50) {
-            if (snowball.yPos <= allMovingObjects[_i].yPos && snowball.yPos >= allMovingObjects[_i].yPos - 70) {
+            if (snowball.yPos <= allMovingObjects[_i].yPos && snowball.yPos >= allMovingObjects[_i].yPos - 50) {
                 return true;
             }
         }

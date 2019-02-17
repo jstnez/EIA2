@@ -46,8 +46,8 @@ var DatabaseClient;
             for (let b = 0; b < 10 && b < hs.length; b++) {
                 let div = document.createElement("div");
                 document.getElementById("High").appendChild(div);
-                div.innerHTML = "Name" + hs[b].name;
-                div.innerHTML += "\t Score" + hs[b].score;
+                div.innerHTML = "Name" + " " + "_" + hs[b].name;
+                div.innerHTML += "___" + "\t Score" + " " + "_" + hs[b].score;
             }
         }
     }

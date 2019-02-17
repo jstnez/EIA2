@@ -1,19 +1,47 @@
+@import url('https://fonts.googleapis.com/css?family=Luckiest+Guy');
+
 @import url('https://fonts.googleapis.com/css?family=Staatliches');
 
 html {
-	font-family: 'Staatliches', cursive;
-	text-align: center;
-	margin-top: 5em;
+	background-color: #E9F2FF
 }
 
-h1 {font-size: 7em;}
+h1 {
+	font-size: 4em;
+	text-align: center;
+	font-family: 'Luckiest Guy', cursive;
+}
+
+h2 {
+	text-align: center;
+	font-family: 'Staatliches', cursive;
+}
 
 input {
-	
+	margin-left: 24em;
 	font-size: 2em;
-	
+	font-family: 'Staatliches', cursive;
 }
 
-legend {text-align: center;}
+button {
+	margin-left: 32em;
+	font-size: 1.5em;
+	font-family: 'Staatliches', cursive;
+}
 
-fieldset {text-align: center;}
+p {
+	text-align: center;
+	font-size: 2em;
+	font-family: 'Staatliches', cursive;
+}
+
+#High {
+	text-align: center;
+	font-family: 'Staatliches', cursive;
+}
+
+h3 {
+	font-family: 'Luckiest Guy', cursive;
+	text-align: center;
+	font-size: 3em;
+}
